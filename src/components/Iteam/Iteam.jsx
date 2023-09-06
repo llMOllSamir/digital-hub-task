@@ -37,8 +37,8 @@ export default function Item({ item = "on", title = "", num = 0 }) {
             </div>
           </div>
           <div className="col-9 text-center">
-            <h2 className="h1"> {counter} </h2>
-            <h4 className="text-muted">{title}</h4>
+            <h3 className="h1"> {counter} </h3>
+            <h5 className="text-muted">{title}</h5>
           </div>
         </div>
       </div>
