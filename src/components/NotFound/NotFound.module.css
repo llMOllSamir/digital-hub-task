@@ -1,0 +1,17 @@
+.btn {
+  width: 100px;
+}
+
+.btn i {
+  animation: go 1s infinite;
+  transform: translate(100%);
+}
+
+@keyframes go {
+  0% {
+    transform: translate(100%);
+  }
+  100% {
+    transform: translate(-100%);
+  }
+}

@@ -1,0 +1,28 @@
+.link {
+  text-decoration: none;
+  display: flex;
+  color: var(--font-color);
+  opacity: .6;
+  font-size: 1.1em;
+  margin-bottom: 36px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+.link:first-of-type{
+  margin-top: 20px;
+}
+
+.link:hover {
+  color: blue;
+  font-size: 1.2em;
+  opacity:1;
+
+}
+.circle {
+  width: 5px;
+  height: 5px;
+  padding: 5px;
+  border: 5px solid green;
+  border-radius: 50%;
+  margin-inline: 5px;
+}

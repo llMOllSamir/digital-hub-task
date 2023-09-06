@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+:root{
+    --main-color: #f2f5fa;
+    --sec-color: white;
+    --access-color:rgba(0, 0, 255, 0.11);
+    --font-color : black;
+    --font:'Rubik', sans-serif
+}
+ *{
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+body{
+    background-color:var(--main-color);
+  }
+ 
+ #navbarScrollingDropdown::after{
+    display: none  !important  ; 
+    color: bisque;
+ }
+
+ .accordion-button::after{
+    margin-left: 0;
+    margin-right: auto;
+ }
