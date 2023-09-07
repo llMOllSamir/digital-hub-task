@@ -1,0 +1,53 @@
+.dateGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--sec-color);
+  border-radius: 12px;
+  padding: 10px;
+  height: 100%;
+  gap: 5px;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.dateGroup h5 {
+  width: 50%;
+}
+.dateGroup input {
+  border: none;
+  width: 100%;
+  text-align: center;
+}
+
+@media all and (max-width: 500px) {
+  .dateGroup {
+    margin-inline: -24px;
+    font-size: 16px;
+  }
+  .dateGroup h5 {
+    font-size: 20px;
+  }
+}
+@media all and (max-width: 400px) {
+  .dateGroup {
+    text-align: center;
+    gap: 0px;
+    margin-inline: auto;
+    font-size: 13px;
+  }
+  .dateGroup h5{
+    font-size: 16px;
+  }
+}
+@media all and (max-width: 350px) {
+  .dateGroup {
+    flex-direction: column;
+     margin-inline:auto;
+    font-size: 13px;
+  }
+  .dateGroup i:first-of-type {
+    transform: rotate(270deg);
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}

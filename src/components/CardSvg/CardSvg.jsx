@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./CardSvg.module.css";
 import MaleSvg from "./../MaleSvg/MaleSvg";
 import FemaleSvg from "./../FemaleSvg/FemaleSvg";
-  
+
 export default function CardSvg({
   title = "",
   mx = "",
@@ -10,9 +10,9 @@ export default function CardSvg({
   color = {},
   id = {},
 }) {
-  const [female, setfemale] = useState(0);
-  const [male, setmale] = useState(0);
-  let handdle = (num) => {
+  const [female, setFemale] = useState(0);
+  const [male, setMale] = useState(0);
+  let handle = (num) => {
     if (window.innerWidth <= num) {
       return true;
     } else {
@@ -23,7 +23,7 @@ export default function CardSvg({
   useEffect(() => {
     let x = setInterval(() => {
       if (female < num?.female) {
-        setfemale((prev) => prev + 1);
+        setFemale((prev) => prev + 1);
       } else {
         clearInterval(x);
       }
@@ -31,7 +31,7 @@ export default function CardSvg({
 
     let y = setInterval(() => {
       if (male < num?.male) {
-        setmale((prev) => prev + 1);
+        setMale((prev) => prev + 1);
       } else {
         clearInterval(y);
       }
@@ -49,7 +49,7 @@ export default function CardSvg({
           <h3 className="my-3">{title}</h3>
           <div className="row   ">
             <div className="col-6 ">
-              <div className={`${handdle(400) ? "w-100" : "w-50"} mx-auto p-3`}>
+              <div className={`${handle(400) ? "w-100" : "w-50"} mx-auto p-3`}>
                 <h4 className="text-muted my-3">إناث</h4>
                 <FemaleSvg
                   id={id?.female}
@@ -60,7 +60,7 @@ export default function CardSvg({
               <h3 className="my-3 fw-bold">{female}%</h3>
             </div>
             <div className="col-6 ">
-              <div className={`${handdle(400) ? "w-100" : "w-50"} mx-auto p-3`}>
+              <div className={`${handle(400) ? "w-100" : "w-50"} mx-auto p-3`}>
                 <h4 className="text-muted my-3">ذكور</h4>
                 <MaleSvg id={id?.male} num={num.male} color={color.male} />
               </div>

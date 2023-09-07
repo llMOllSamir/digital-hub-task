@@ -2,62 +2,8 @@
   margin-right: 350px;
   transition: all 1s;
 }
-.dateGroup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--sec-color);
-  border-radius: 12px;
-   padding: 10px;
-  height: 100%;
-  gap: 5px;
-  flex-wrap: nowrap;
-}
-.dateGroup input{
-  border: none;
-  width: 100%;
-}
-.btnGroup {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100%;
-  min-height: 60px;
-}
-.btnGroup button {
-  border: 0;
-  width: 100px;
-  height: 100%;
-  background-color: var(--sec-color);
-  border-inline: 1px solid var(--main-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  gap: 0 10px;
-}
-.btnGroup > button:first-of-type {
-  border-right: none;
-  border-radius: 0 12px 12px 0;
-}
-.btnGroup button:last-of-type {
-  border-left: none;
-  border-radius: 12px 0 0 12px;
-}
 
-.btnGroup > button > span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
 
-.btnGroup > button:hover {
-  background-color: var(--main-color);
-}
-
-.btnGroup > .active {
-  background-color: var(--access-color);
-}
 
 .line {
   position: relative;
@@ -73,23 +19,15 @@
   left: 0;
   transform: translate(-50%);
 }
-@media all and (max-width: 600px) {
-  .dateGroup{
-    flex-wrap: nowrap;
-  }
-}
+
 @media all and (max-width: 992px) {
   .main {
     margin-inline: 10px;
   }
-  .btnGroup {
-    justify-content: center;
-  }
+ 
 }
 @media all and (max-width: 1200px) {
-  .btnGroup {
-    justify-content: center;
-  }
+ 
   .line {
     position: static;
   }

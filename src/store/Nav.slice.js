@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  navHeight: 0,
+  navHeight: 145,
   sliderOn: true,
   sliderWidth: "350px",
 };

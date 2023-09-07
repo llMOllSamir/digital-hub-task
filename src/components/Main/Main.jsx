@@ -1,33 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Main.module.css";
 import { useSelector } from "react-redux";
-import { Form } from "react-bootstrap";
 import Item from "../Iteam/Iteam";
 import CardSvg from "./../CardSvg/CardSvg";
-import "react-datepicker/dist/react-datepicker.css";
-import DatePicker from "react-datepicker";
+import FormDate from "../FormDate/FormDate";
+import ButtonTabs from "../ButtonTabs/ButtonTabs";
 
 export default function Main() {
   let { navHeight } = useSelector((state) => state.navbar);
-  let tabs = useRef();
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-
-  const handleStartDateChange = (date) => {
-    setStartDate(date);
-  };
-
-  const handleEndDateChange = (date) => {
-    setEndDate(date);
-  };
-
-  let handelActive = (e) => {
-    Array.from(tabs.current.children).forEach((element) => {
-      element.classList.remove(styles.active);
-    });
-
-    e.target.classList.add(styles.active);
-  };
 
   useEffect(() => {}, []);
 
@@ -39,42 +19,15 @@ export default function Main() {
       >
         <div className="container-fluid">
           <div className="row g-5 ">
-            <div className=" col-sm-8 col-md-6 col-xxl-4  ">
-              <Form className={styles.dateGroup}>
-              <h5 className="w-50">الفتره :</h5>
+            <div className="col-12">
+              <div className="row g-5">
+                <div className=" col-sm-10 col-md-7 col-lg-8 col-xl-7  col-xxl-4  ">
+                  <FormDate />
+                </div>
 
-                <DatePicker
-                  selected={startDate}
-                  onChange={handleStartDateChange}
-                  selectsStart
-                  startDate={startDate}
-                  endDate={endDate}
-                 />
-                <i className="fa-solid fa-arrow-left-long"></i>
-
-                <DatePicker
-                  selected={endDate}
-                  onChange={handleEndDateChange}
-                  selectsEnd
-                  startDate={startDate}
-                  endDate={endDate}
-                  minDate={startDate}
- 
-                />
-              </Form>
-            </div>
-
-            <div className="  col-xl-6 col-xxl-4 ">
-              <div ref={tabs} className={styles.btnGroup}>
-                <button onClick={handelActive} className={styles.active}>
-                  <span className="bg-secondary"></span>الكل
-                </button>
-                <button onClick={handelActive}>
-                  <span className="bg-warning"></span>غير موثق
-                </button>
-                <button onClick={handelActive}>
-                  <span className="bg-success"></span>موثق
-                </button>
+                <div className="    col-xxl-4 ">
+                  <ButtonTabs />
+                </div>
               </div>
             </div>
 

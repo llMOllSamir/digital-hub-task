@@ -14,22 +14,22 @@ import { useDispatch } from "react-redux";
 import { setNavHeight } from "../../store/Nav.slice";
 
 export default function NavBar() {
-  const [mx, setmx] = useState("mx-5");
+  const [mx, setMx] = useState("mx-5");
   let nav = useRef();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (window.innerWidth <= 600) setmx("mx-1");
+    if (window.innerWidth <= 600) setMx("mx-1");
     window.addEventListener("resize", (e) => {
       if (e.target.innerWidth <= 600) {
-        setmx("mx-1");
+        setMx("mx-1");
       } else {
-        setmx("mx-5");
+        setMx("mx-5");
       }
     });
     setTimeout(() => {
       dispatch(setNavHeight(nav.current.clientHeight));
-    }, 10);
+     }, 10);
   }, []);
 
   return (

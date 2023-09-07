@@ -7,18 +7,18 @@ import { activeSlider, setSliderWidth } from "../../store/Nav.slice";
 
 export default function Slider({sliderMenu=[]}) {
   let { navHeight } = useSelector((state) => state.navbar);
-  let [isVisable, setIsVisable] = useState(false);
+  let [isVisible, setIsVisible] = useState(false);
   let slider = useRef();
   let dispatch = useDispatch()
  
   let handleSlider = () => {
-    if (isVisable) {
-      setIsVisable(false);
+    if (isVisible) {
+      setIsVisible(false);
       slider.current.style.width = `350px`;
       dispatch(setSliderWidth(350))
       dispatch(activeSlider(true))
     } else {
-      setIsVisable(true);
+      setIsVisible(true);
       slider.current.style.width = `0px`;
       dispatch(setSliderWidth(0))
       dispatch(activeSlider(false))
@@ -27,7 +27,7 @@ export default function Slider({sliderMenu=[]}) {
 
   useEffect(() => {
     if (window.innerWidth <= 992) {
-      setIsVisable(true);
+      setIsVisible(true);
       slider.current.style.width = `0px`;
       dispatch(setSliderWidth(0))
       dispatch(activeSlider(false))
@@ -36,11 +36,11 @@ export default function Slider({sliderMenu=[]}) {
     window.addEventListener("resize", () => {
       if (window.innerWidth <= 992) {
         slider.current.style.width = `0px`;
-        setIsVisable(true);
+        setIsVisible(true);
         dispatch(setSliderWidth(0))
         dispatch(activeSlider(false))
       } else {
-        setIsVisable(false);
+        setIsVisible(false);
         slider.current.style.width = `350px`;
         dispatch(setSliderWidth(350))
         dispatch(activeSlider(true))
@@ -60,7 +60,7 @@ export default function Slider({sliderMenu=[]}) {
         )}
         <Acoord  sliderMenu={sliderMenu}/>
       </div>
-      {isVisable && (
+      {isVisible && (
         <button
           onClick={handleSlider}
           className={"btn btn-light  " + styles.btn}
